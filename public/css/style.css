@@ -457,12 +457,28 @@ body {
   }
 
   .room-body .sidebar::-webkit-scrollbar {
-    width: 5px;
+    width: 2px;
 
   }
 
   #messages-area::-webkit-scrollbar {
     width: 2px;
+    border-radius: 5px;
+  }
+
+
+
+  #messages-area::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+
+  #messages-area::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  #messages-area::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 
 
@@ -470,12 +486,12 @@ body {
 
 @media screen and (max-width: 500px) {
   .chatroom-container {
-    width: 95vw;
-    height: 85vh;
+    width: 100vw;
+    height: 100vh;
   }
 
   .room-header {
-    height: 8.75vh;
+    height: 10vh;
   }
 
   .header-title {
@@ -484,7 +500,7 @@ body {
   }
 
   .room-body {
-    height: 67.5vh;
+    height: 80vh;
   }
 
   #roomName {
@@ -492,7 +508,7 @@ body {
   }
 
   .room-footer {
-    height: 8.75vh;
+    height: 10vh;
   }
 }
 
