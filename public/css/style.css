@@ -20,7 +20,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
   font-family: "Poppins", sans-serif;
   background-color: #242424;
 }
@@ -209,7 +209,6 @@ body {
 
 #messages-area {
   width: 70%;
-  height: 100%;
   background-color: #ffff;
   display: flex;
   overflow-y: scroll !important;
@@ -438,10 +437,38 @@ body {
   }
 
   #messages-area::-webkit-scrollbar {
-    width: 5px;
+    width: 2px;
   }
 
 
+}
+
+@media screen and (max-width: 500px) {
+  .chatroom-container {
+    width: 95vw;
+    height: 85vh;
+  }
+
+  .room-header {
+    height: 8.75vh;
+  }
+
+  .header-title {
+    padding: 0px;
+    font-size: 1.5rem;
+  }
+
+  .room-body {
+    height: 67.5vh;
+  }
+
+  #roomName {
+    font-size: 1.3rem;
+  }
+
+  .room-footer {
+    height: 8.75vh;
+  }
 }
 
 
