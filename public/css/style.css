@@ -317,6 +317,7 @@ body {
   font-size: 1rem;
   white-space: normal;
   word-break: break-word;
+  text-align: left;
 }
 
 .my-message {
@@ -356,6 +357,7 @@ body {
   color: #fff;
   white-space: normal;
   word-break: break-word;
+  text-align: left;
 }
 
 .bot-message {
