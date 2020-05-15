@@ -30,6 +30,8 @@ io.on("connect", (socket) => {
     const { error } = user;
     if (error) {
       return callback(error);
+    } else if (!user.room) {
+      return callback("Create room or join room");
     }
 
     socket.join(user.room);
@@ -51,6 +53,9 @@ io.on("connect", (socket) => {
   //chat message
   socket.on("chatMessage", (msg, callback) => {
     const user = getUser(socket.id);
+    if (!user.room) {
+      return callback(error);
+    }
     socket.broadcast
       .to(user.room)
       .emit("message", messageFormat(user.username, msg));

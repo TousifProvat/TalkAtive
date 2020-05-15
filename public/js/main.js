@@ -72,7 +72,8 @@ $chatForm.addEventListener("submit", (e) => {
     $chatFormInput.focus();
 
     if (error) {
-      return console.log(error);
+      alert(error);
+      location.href = "/";
     }
   });
 });
