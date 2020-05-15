@@ -279,6 +279,7 @@ body {
   background-color: transparent;
   border: 1px solid #ffffff;
   outline: none;
+  font-size: 17px;
 }
 
 #chat-form button {
