@@ -27,6 +27,12 @@ app.use(chatAppRoute);
 io.on("connect", (socket) => {
   socket.on("joinRoom", ({ username, room }, callback) => {
     const user = addUser(socket.id, username, room);
+    const { error } = user;
+    if (error) {
+      return callback(error);
+      
+    }
+
     socket.join(user.room);
     //welcome user
     socket.emit("sysMessage", "Welcome to chat App");
@@ -41,8 +47,6 @@ io.on("connect", (socket) => {
       room: user.room,
       users: getRoomUsers(user.room),
     });
-
-    callback();
   });
 
   //chat message

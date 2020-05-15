@@ -7,6 +7,18 @@ const addUser = (id, username, room) => {
   username = username.trim().toLowerCase();
   room = room.trim().toLowerCase();
 
+  //check for existing
+  const existingUser = users.find((user) => {
+    return user.room === room && user.username === username;
+  });
+  //validate username
+  if (existingUser) {
+    return {
+      error: "Username exists in this room",
+    };
+  }
+  //store user
+
   const user = { id, username, room };
   users.push(user);
   return user;

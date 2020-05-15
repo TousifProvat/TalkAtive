@@ -1,6 +1,7 @@
 const socket = io();
 
 //elements
+
 const $chatForm = document.getElementById("chat-form");
 const $chatFormBtn = $chatForm.querySelector("button");
 const $chatFormInput = $chatForm.querySelector("input");
@@ -36,10 +37,6 @@ const AutoScroll = () => {
 
   $messageArea.scrollTop = $messageArea.scrollHeight;
 };
-
-//Join chat room
-
-socket.emit("joinRoom", { username, room }, (error) => {});
 
 //get room and users
 socket.on("roomUsers", ({ room, users }) => {
@@ -141,4 +138,30 @@ const sideBar = document.querySelector(".sidebar");
 
 burgerIcon.addEventListener("click", () => {
   sideBar.classList.toggle("sidebar-active");
+});
+
+// error box appear to dom
+
+// const errorBox = (error) => {
+//   const errorDiv = document.createElement("div");
+//   errorDiv.classList.add("error-box");
+//   errorDiv.innerHTML = `
+//     <p class="error"> ${error}</p>
+//   `;
+//   document.getElementById("login-box").appendChild(errorDiv);
+
+//   if (document.getElementById("login-box").firstChild) {
+//     return document
+//       .getElementById("login-box")
+//       .replaceChild(errorDiv, document.getElementById("login-box").firstChild);
+//   }
+// };
+
+//Join chat room
+
+socket.emit("joinRoom", { username, room }, (error) => {
+  if (error) {
+    alert(error);
+    location.href = "/";
+  }
 });
