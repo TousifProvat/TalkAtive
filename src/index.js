@@ -30,12 +30,11 @@ io.on("connect", (socket) => {
     const { error } = user;
     if (error) {
       return callback(error);
-      
     }
 
     socket.join(user.room);
     //welcome user
-    socket.emit("sysMessage", "Welcome to chat App");
+    socket.emit("sysMessage", "Welcome to talkative");
     //when joins
     socket.broadcast
       .to(user.room)
