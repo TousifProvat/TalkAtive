@@ -413,6 +413,7 @@ body {
   .sidebar {
     transform: translateX(-100%);
     position: absolute;
+    z-index: 10;
     transition: transform 0.3s;
   }
 
