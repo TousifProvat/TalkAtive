@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat app</title>
+    <link rel="stylesheet" href="/css/style.css" />
+
+    <!-- font-awesome -->
+    <script
+      src="https://kit.fontawesome.com/7e8f7b28f5.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="chatroom-container">
+      <div class="room-header">
+        <div class="burger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <h1 class="header-title">TalkAtive</h1>
+        <div class="leave-room">
+          <a href="/login"><i class="fas fa-sign-out-alt fa-2x"></i></a>
+        </div>
+      </div>
+      <div class="room-body">
+        <div class="sidebar">
+          <div class="sidebar-container">
+            <div class="room-name">
+              <h1 class="room-title">
+                <span><i class="far fa-comments"></i> </span> Room title:
+              </h1>
+              <h1 id="roomName"></h1>
+            </div>
+            <div class="users">
+              <h1>
+                <span><i class="fas fa-users"></i></span> Users:
+              </h1>
+              <ul id="userNames"></ul>
+            </div>
+          </div>
+        </div>
+        <div id="messages-area"></div>
+      </div>
+      <div class="room-footer">
+        <form id="chat-form">
+          <input
+            type="text"
+            id="msg"
+            name="msg"
+            placeholder="Type message"
+            autocomplete="off"
+            required
+          />
+          <button id="message-send"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.25.3/moment.min.js"
+      integrity="sha256-C66CaAImteEKZPYvgng9j10J/45e9sAuZyfPYCwp4gE="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.min.js"
+      integrity="sha256-ijqLssetA1NMNjZ+w1zaUafQQLm4IW5OoM8O+4tatME="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
