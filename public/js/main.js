@@ -83,16 +83,16 @@ $chatForm.addEventListener("submit", (e) => {
 //out going message to dom
 const outgoingMessage = (msg) => {
   const time = moment().format("h:mm a");
-  const mainDiv = document.createElement("div");
-  mainDiv.classList.add("my-message");
-  mainDiv.innerHTML = `
+  const mymainDiv = document.createElement("div");
+  mymainDiv.classList.add("my-message");
+  mymainDiv.innerHTML = `
   <div class="message-content">
   <h3> Me <span class="message-time">${time}</span></h3>
   <p class="messsage">${msg}</p>
 </div>
   `;
 
-  $messageArea.appendChild(mainDiv);
+  $messageArea.appendChild(mymainDiv);
 };
 
 //icoming message to dom

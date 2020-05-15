@@ -321,8 +321,9 @@ body {
 
 .my-message {
   margin: 1rem 1.2rem;
-  display: flex;
-  justify-content: flex-end;
+  /* display: flex;
+  justify-content: flex-end; */
+  text-align: right;
 }
 
 .my-message .message-content {
