@@ -1,4 +1,6 @@
 const socket = io();
+//time
+const time = moment().format("h:mm a");
 
 //elements
 
@@ -66,7 +68,7 @@ $chatForm.addEventListener("submit", (e) => {
   outgoingMessage(msg);
   AutoScroll();
 
-  socket.emit("chatMessage", msg, (error) => {
+  socket.emit("chatMessage", msg, time, (error) => {
     $chatFormBtn.removeAttribute("disabled");
     $chatFormInput.value = "";
     $chatFormInput.focus();
@@ -80,7 +82,6 @@ $chatForm.addEventListener("submit", (e) => {
 
 //out going message to dom
 const outgoingMessage = (msg) => {
-  const time = moment().format("h:mm a");
   const mymainDiv = document.createElement("div");
   mymainDiv.classList.add("my-message");
   mymainDiv.innerHTML = `

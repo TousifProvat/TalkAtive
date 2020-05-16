@@ -51,14 +51,14 @@ io.on("connect", (socket) => {
   });
 
   //chat message
-  socket.on("chatMessage", (msg, callback) => {
+  socket.on("chatMessage", (msg, time, callback) => {
     const user = getUser(socket.id);
     if (!user.room) {
       return callback(error);
     }
     socket.broadcast
       .to(user.room)
-      .emit("message", messageFormat(user.username, msg));
+      .emit("message", messageFormat(user.username, msg, time));
     callback();
   });
 
