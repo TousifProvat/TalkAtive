@@ -139,6 +139,7 @@ const sideBar = document.querySelector(".sidebar");
 
 burgerIcon.addEventListener("click", () => {
   sideBar.classList.toggle("sidebar-active");
+  burgerIcon.classList.toggle("active");
 });
 
 // error box appear to dom
