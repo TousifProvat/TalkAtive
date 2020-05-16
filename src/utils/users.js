@@ -4,6 +4,16 @@ const users = [];
 
 const addUser = (id, username, room) => {
   //cleaning data
+  if (!username) {
+    return {
+      error: "Use username",
+    };
+  } else if (!room) {
+    return {
+      error: "Join room!",
+    };
+  }
+
   username = username.trim().toLowerCase();
   room = room.trim().toLowerCase();
 

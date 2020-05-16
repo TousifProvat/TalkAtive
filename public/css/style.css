@@ -153,8 +153,18 @@ body {
 }
 
 .header-title {
-  color: #ffff;
   padding-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.header-title span {
+  padding-left: .3rem;
+  color: #598753;
+  display: none;
 }
 
 .leave-room {
@@ -425,6 +435,12 @@ body {
   .burger {
     display: block;
     margin-left: .5rem;
+  }
+
+  .header-title span {
+    padding-left: .3rem;
+    color: #598753;
+    display: block;
   }
 
 

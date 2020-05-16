@@ -30,8 +30,6 @@ io.on("connect", (socket) => {
     const { error } = user;
     if (error) {
       return callback(error);
-    } else if (!user.room) {
-      return callback("Create room or join room");
     }
 
     socket.join(user.room);
